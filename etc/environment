@@ -1,0 +1,7 @@
+http_proxy="http://user:Paswd@proxy:8080/"
+https_proxy=$http_proxy
+ftp_proxy=$http_proxy
+HTTP_PROXY=$http_proxy
+HTTPS_PROXY=$http_proxy
+FTP_PROXY=$http_proxy
+no_proxy=localhost,127.0.0.0,127.0.1.1,127.0.1.1,*local,172.21,*wrm.ae,*.wrm.abudhabi.ae,*.drm.gov.abudhabi,*.local
