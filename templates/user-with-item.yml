@@ -1,0 +1,31 @@
+  ---
+  - name: create users
+    hosts: elk.drmtest.local
+    tasks:
+    - name: manage users and group membership
+      
+      user:
+        name: "{{ item.name }}"
+        state: present
+        groups: "{{ item.group }}"
+      with_items:
+        - { name: 'yasir', groups: 'ops' }
+        - { name: 'abdul', groups: 'sec' }
+
+---
+- name: deploy vsftpd
+  hosts: all
+  tasks:
+  - name: install vsftpd
+    package:
+      name: vsftpd
+      state: latest
+  - name: enable vsftpd
+    service: name=vsftpd enabled=true
+  - name: create readme file
+    copy:
+      content: "Welcome to my Ansible-managed VSFTP server\n"
+      dest: /var/ftp/pub/README
+      force: no
+      mode: 444
+...
