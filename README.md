@@ -1,2 +1,4 @@
-# elsharify.github.io
-Just random stuff from lil linux tweaking to openstack Heat templates.
+# YasirSharif.github.io
+Just random Linux, Ansible, Python and Openstack activities.
+
+
